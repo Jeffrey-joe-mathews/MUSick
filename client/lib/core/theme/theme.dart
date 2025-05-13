@@ -1,9 +1,23 @@
 import 'package:client/core/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 
-class appTheme { 
+class AppTheme {
   static final darkThemeMode = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: Pallete.backgroundColor,
+    inputDecorationTheme: const InputDecorationTheme(
+      contentPadding: EdgeInsets.all(25),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Pallete.borderColor,
+          width: 3
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Pallete.gradient1,
+          width: 3
+        ),
+      )
+    )
   );
-
 }
