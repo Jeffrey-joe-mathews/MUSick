@@ -3,26 +3,26 @@ import 'package:client/features/auth/view/widgets/my_auth_button.dart';
 import 'package:client/features/auth/view/widgets/my_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _LoginPageState extends State<LoginPage> {
+
   final nameController = TextEditingController();
-  final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
     nameController.dispose();
-    emailController.dispose();
     passwordController.dispose();
     super.dispose();
   }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _SignupPageState extends State<SignupPage> {
                     const SizedBox(height: 60),
                 
                     const Text(
-                      'Sign Up',
+                      'Sign In',
                       style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 30),
@@ -49,11 +49,6 @@ class _SignupPageState extends State<SignupPage> {
                     Mytextformfield(hintText: 'Name', controller: nameController),
                     const SizedBox(height: 15),
                 
-                    Mytextformfield(
-                      hintText: 'Email',
-                      controller: emailController,
-                    ),
-                    const SizedBox(height: 15),
                 
                     Mytextformfield(
                       hintText: 'Password',
@@ -65,11 +60,11 @@ class _SignupPageState extends State<SignupPage> {
                     const SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
-                        text: "Already have an Account? ",
+                        text: "Don't have an Account? ",
                         style: Theme.of(context).textTheme.titleMedium,
                         children: [
                           TextSpan(
-                            text: "Sign In",
+                            text: "Sign Up",
                             style: TextStyle(
                               color: Pallete.gradient1,
                               fontWeight: FontWeight.bold,
