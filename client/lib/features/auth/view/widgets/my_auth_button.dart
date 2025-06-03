@@ -2,7 +2,10 @@ import 'package:client/core/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 
 class MyAuthButton extends StatelessWidget {
-  const MyAuthButton({super.key});
+
+  final String actionText;
+  final void Function()? onPressedAuth;
+  const MyAuthButton({super.key, required this.actionText, required this.onPressedAuth});
 
   static String text = "Sign Up";
 
@@ -18,7 +21,7 @@ class MyAuthButton extends StatelessWidget {
         ),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressedAuth,
         style: ElevatedButton.styleFrom(
           elevation: 0,
           fixedSize: const Size(395, 55),
@@ -26,8 +29,8 @@ class MyAuthButton extends StatelessWidget {
           shadowColor: Pallete.transparentColor,
         ),
         child: Text(
-          "Sign Up",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          actionText,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ), 
       ),
     );

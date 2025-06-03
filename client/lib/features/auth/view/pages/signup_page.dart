@@ -39,35 +39,41 @@ class _SignupPageState extends State<SignupPage> {
                   children: [
                     // space at the top to not completely center the thing
                     const SizedBox(height: 60),
-                
+
                     const Text(
                       'Sign Up',
-                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 30),
-                
-                    Mytextformfield(hintText: 'Name', controller: nameController),
+
+                    Mytextformfield(
+                      hintText: 'Name',
+                      controller: nameController,
+                    ),
                     const SizedBox(height: 15),
-                
+
                     Mytextformfield(
                       hintText: 'Email',
                       controller: emailController,
                     ),
                     const SizedBox(height: 15),
-                
+
                     Mytextformfield(
                       hintText: 'Password',
                       controller: passwordController,
                       obscureText: true,
                     ),
                     const SizedBox(height: 20),
-                    const MyAuthButton(),
+                    MyAuthButton(actionText: "Sign Up", onPressedAuth: (){},),
                     const SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
                         text: "Already have an Account? ",
                         style: Theme.of(context).textTheme.titleMedium,
-                        children: [
+                        children: const [
                           TextSpan(
                             text: "Sign In",
                             style: TextStyle(

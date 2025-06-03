@@ -11,7 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -22,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
     passwordController.dispose();
     super.dispose();
   }
- 
 
   @override
   Widget build(BuildContext context) {
@@ -39,30 +37,35 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     // space at the top to not completely center the thing
                     const SizedBox(height: 60),
-                
+
                     const Text(
-                      'Sign In',
-                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                      'Sign In.',
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 30),
-                
-                    Mytextformfield(hintText: 'Name', controller: nameController),
+
+                    Mytextformfield(
+                      hintText: 'Name',
+                      controller: nameController,
+                    ),
                     const SizedBox(height: 15),
-                
-                
+
                     Mytextformfield(
                       hintText: 'Password',
                       controller: passwordController,
                       obscureText: true,
                     ),
                     const SizedBox(height: 20),
-                    const MyAuthButton(),
+                    MyAuthButton(actionText: "Sign In", onPressedAuth: (){},),
                     const SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
                         text: "Don't have an Account? ",
                         style: Theme.of(context).textTheme.titleMedium,
-                        children: [
+                        children: const [
                           TextSpan(
                             text: "Sign Up",
                             style: TextStyle(
