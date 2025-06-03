@@ -1,3 +1,4 @@
+import 'package:client/features/auth/view/widgets/my_auth_button.dart';
 import 'package:client/features/auth/view/widgets/my_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -23,21 +24,23 @@ class _SignupPageState extends State<SignupPage> {
       
           const Text('Sign Up', style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),),
           const SizedBox(height: 30,),
-      
-          Mytextformfield(
+
+          const Mytextformfield(
             hintText: 'Name',
           ),
           const SizedBox(height: 15,),
       
-          Mytextformfield(
+          const Mytextformfield(
             hintText: 'Email'
           ),
           const SizedBox(height: 15,),
       
-          Mytextformfield(
+          const Mytextformfield(
             hintText: 'Password'
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(height: 20,),
+          const MyAuthButton(),
+          const SizedBox(height: 37,),
         ],
       ),
     ),
